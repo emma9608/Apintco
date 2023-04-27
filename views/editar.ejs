@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Editar Usuario</title>
+  <%- include('header') %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-7cFTJWj/8t51w1tEZGWkHvNdyWnPFJFZ49+9X83bznFh57voHZZD7k/mw3q+4fwVz5mYl8/ZVzR9+uB+VRixg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="mb-4">Editar Usuario</h2>
+
+        <form method="POST" action="/editar/<%= usuario.ID %>">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" class="form-control" value="<%= usuario.nombre %>">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" class="form-control" value="<%= usuario.email %>">
+          </div>
+
+          <div class="form-group">
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" name="contraseña" id="contraseña" class="form-control">
+            <small class="form-text text-muted">Deje este campo en blanco si no desea actualizar la contraseña.</small>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+
+        <a href="/" class="btn btn-secondary mt-3">Volver al listado</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-5OJ7NodS+5J6Uv+B31WJ9womjG6Ux3fA3vrKL/lKjGAIQrNYO3mt2gT8iuC/uxYT0TJjruTbYs6sJWfZMnH9AA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js" integrity="sha512-IfUxLBxUzstAMVPF8AzYIcZrUsMfhq57/lv7UCuK+db2VDDb4h3ODaV7+uYzRZC7SshX9B+GEm8NjKwof51ENw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

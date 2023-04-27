@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lista de Usuarios</title>
+    <!-- CSS de Bootstrap -->
+  <%- include('header') %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-7cFTJWj/8t51w1tEZGWkHvNdyWnPFJFZ49+9X83bznFh57voHZZD7k/mw3q+4fwVz5mYl8/ZVzR9+uB+VRixg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="my-5">Lista de Usuarios</h1>
+      <% if (mensaje) { %>
+        <div class="alert alert-success"><%= mensaje %></div>
+      <% } %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (var i = 0; i < usuarios.length; i++) { %>
+            <tr>
+              <td><%= usuarios[i].id %></td>
+              <td><%= usuarios[i].nombre %></td>
+              <td><%= usuarios[i].apellido %></td>
+              <td><%= usuarios[i].email %></td>
+              <td><%= usuarios[i].telefono %></td>
+              <td>
+                <a href="/editar/<%= usuarios[i].id %>" class="btn btn-primary btn-sm">Editar</a>
+                <a href="/eliminar/<%= usuarios[i].id %>" class="btn btn-danger btn-sm">Eliminar</a>
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <a href="/agregar" class="btn btn-success">Agregar usuario</a>
+    </div>
+    <!-- JS de Bootstrap (requiere jQuery) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-5OJ7NodS+5J6Uv+B31WJ9womjG6Ux3fA3vrKL/lKjGAIQrNYO3mt2gT8iuC/uxYT0TJjruTbYs6sJWfZMnH9AA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js" integrity="sha512-IfUxLBxUzstAMVPF8AzYIcZrUsMfhq57/lv7UCuK+db2VDDb4h3ODaV7+uYzRZC7SshX9B+GEm8NjKwof51ENw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </body>
+</html>
