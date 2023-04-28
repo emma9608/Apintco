@@ -21,7 +21,7 @@ app.get('/agregar', usuariosController.mostrarFormularioAgregar);
 app.post('/agregar', usuariosController.agregarUsuario);
 app.get('/editar/:id', usuariosController.mostrarFormularioEditar);
 app.post('/editar/:id', usuariosController.actualizarUsuario);
-app.get('/eliminar/:id', usuariosController.eliminarUsuario);
+app.post('/eliminar/:id', usuariosController.eliminarUsuario);
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
